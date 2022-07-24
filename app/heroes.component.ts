@@ -23,6 +23,22 @@ export class HeroesComponent implements OnInit {
         .then(heroes => this.heroes = heroes);
   }
 
+  addFirstLast(firstname: string, lastname: string): void {
+    firstname = firstname.trim();
+    if (!firstname) {
+      return;
+    }
+    lastname = lastname.trim();
+    if (!lastname) {
+      return;
+    }
+    this.heroService.create(firstname + ' ' + lastname)
+        .then(hero => {
+          this.heroes.push(hero);
+          this.selectedHero = null;
+        });
+  }
+
   add(name: string): void {
     name = name.trim();
     if (!name) {
