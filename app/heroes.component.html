@@ -1,6 +1,6 @@
 <h2>My People</h2>
 <div>
-    <label>First:</label> <input #heroName mask="First Name"/> <label>Last:</label> <input #lastName/>
+    <label></label> <input #heroName placeholder="First Name"/> <label></label> <input #lastName placeholder="Last Name"/>
     <button (click)="addFirstLast(heroName.value, lastName.value); heroName.value=''; lastName.value=''">
         Add
     </button>
